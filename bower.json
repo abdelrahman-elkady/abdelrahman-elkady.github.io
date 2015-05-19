@@ -1,0 +1,16 @@
+{
+  "name": "abdelrahman-elkady.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/abdelrahman-elkady/abdelrahman-elkady.github.io",
+  "authors": [
+    "kady <elkadyabdelrahman@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

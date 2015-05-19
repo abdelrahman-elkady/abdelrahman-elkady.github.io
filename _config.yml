@@ -12,3 +12,12 @@ github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+
+# Assets
+sass:
+    sass_dir: assets/_sass
+
+# Bower exclusion !
+exclude:
+  - "bower_components"
+  - "bower.json"
