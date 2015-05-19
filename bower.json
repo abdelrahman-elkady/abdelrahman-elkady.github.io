@@ -12,5 +12,9 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "semantic-ui": "~1.12.2",
+    "font-awesome": "~4.3.0"
+  }
 }
