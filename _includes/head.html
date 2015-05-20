@@ -6,8 +6,10 @@
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <!-- semanticUI -->
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/semantic-ui/dist/semantic.css">
+  <!-- Bootstrap material stylesheets -->
+  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/material.min.css" rel="stylesheet">
+  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
 
   <!-- font awesome -->
   <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/font-awesome/css/font-awesome.css ">
