@@ -7,14 +7,14 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- semanticUI -->
-  <link rel="stylesheet" href="{{ " assets/bower_components/semantic-ui/dist/semantic.css " | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/semantic-ui/dist/semantic.css">
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="{{ " assets/bower_components/font-awesome/css/font-awesome.css " | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/font-awesome/css/font-awesome.css ">
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="{{ " assets/css/main.css " | prepend: site.baseurl }}">
+  <link rel="stylesheet " href="{{site.baseurl}}/assets/css/main.css ">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}" />
+  <link rel="canonical " href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }} ">
+  <link rel="alternate " type="application/rss+xml " title="{{ site.title }} " href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }} " />
 </head>
