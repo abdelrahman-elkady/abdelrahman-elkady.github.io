@@ -1,0 +1,8 @@
+@mixin circular-image($size) {
+  width: $size;
+  height: $size;
+  -webkit-border-radius: $size/2;
+  -moz-border-radius: $size/2;
+  -ms-border-radius: $size/2;
+  border-radius: $size/2;
+}

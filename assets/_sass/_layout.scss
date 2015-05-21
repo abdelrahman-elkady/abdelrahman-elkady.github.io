@@ -1,0 +1,30 @@
+.home-main {
+  background-image: url("../images/bg-keyboard.jpg");
+  background-position: center;
+  background-size: cover;
+
+  .profile-image {
+    @include circular-image(250px);
+    margin: 50px 0;
+  }
+
+  .main-name {
+    text-shadow: 1px 1px 4px rgba(6, 57, 102, 1);
+    font-size: 4.5rem;
+    line-height: $base-line-height;
+  }
+
+  .main-subtitle {
+    @extend .main-name;
+    font-size: 2.5rem;
+  }
+}
+
+.bg-overlay {
+  background-color: rgba(33, 150, 243, 0.5);
+}
+
+.centered {
+  text-align: center;
+  margin: 0 auto;
+}
