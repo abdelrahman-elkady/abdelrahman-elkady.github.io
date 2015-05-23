@@ -1,14 +1,15 @@
-.home-main {
+.home-header {
   background-image: url("../images/bg-keyboard.jpg");
   background-position: center;
   background-size: cover;
   position: relative;
   height: 100vh;
   min-height: 790px;
+  color:white;
 
   .profile-image {
     @include circular-image(250px);
-    margin-top: 180px;
+    margin-top: 20vh;
   }
 
   .main-name {

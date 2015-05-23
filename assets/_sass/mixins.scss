@@ -6,3 +6,10 @@
   -ms-border-radius: $size/2;
   border-radius: $size/2;
 }
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}

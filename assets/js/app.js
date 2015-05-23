@@ -11,7 +11,7 @@
   $(document).ready(function() {
     var adjustMe = function() {
       var navHeight = $('.navbar-material-blue.navbar').height();
-      $('.home-main').css('margin-top', -1 * navHeight + 'px');
+      $('.home-header').css('margin-top', -1 * navHeight + 'px');
     };
 
     $(window).resize(adjustMe())

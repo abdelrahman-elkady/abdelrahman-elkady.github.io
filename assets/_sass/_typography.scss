@@ -1,5 +1,17 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
 .logo-code {
-  color: $material-deep-orange;
+  color: $secondary-orange-color;
   font-weight: 600;
   font-size: 1.1em;
+}
+.skill-title {
+  font-weight: 400;
+}
+.skill-description {
+  font-family: "Roboto",sans-serif;
+  font-weight: 300;
+  font-size: $base-font-size * 0.9;
+  padding: 0 15px;
+  line-height: 23px;
 }

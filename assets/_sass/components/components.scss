@@ -1,3 +1,21 @@
 .button-more {
-  margin-top : 50px ;
+  margin-top: 50px;
+}
+
+.icon-based-skill {
+  background-color: lighten($primary-blue-color,30%);
+  padding: 20px 10px;
+  .skill-icon {
+    color: $secondary-orange-color;
+  }
+  .skill-description{
+    margin-top: 25px;
+  }
+}
+.section {
+  padding: 70px 0px;
+}
+.blue-section {
+  background-color: lighten($primary-blue-color,10%);
+  width:100%;
 }
