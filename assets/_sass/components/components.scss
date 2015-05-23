@@ -2,9 +2,10 @@
   margin-top: 50px;
 }
 
-.icon-based-skill {
+.icon-based-skill-card {
   background-color: lighten($primary-blue-color,30%);
   padding: 20px 10px;
+  margin:25px 0;
   .skill-icon {
     color: $secondary-orange-color;
   }
