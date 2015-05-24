@@ -1,0 +1,21 @@
+#footer {
+  background-color: darken($primary-blue-color,20%);
+  color: white;
+
+  .footer-icon-list {
+    padding:0;
+    margin: 35px 0;
+    li {
+      display: inline;
+    }
+  }
+
+  .footer-icon {
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    padding: 0 10px;
+  }
+}
