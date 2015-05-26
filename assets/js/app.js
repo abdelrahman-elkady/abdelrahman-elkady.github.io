@@ -17,3 +17,11 @@
     $(window).resize(adjustMe())
       .ready(adjustMe());
   });
+
+  /*
+   * Adding copyright with current year
+   */
+   $(document).ready(function() {
+     var copyrightText = document.createTextNode('\u00A9 abdelrahman elkady ' + (new Date()).getFullYear());
+    $('#copyright').append($('<p>').append(copyrightText));
+   });

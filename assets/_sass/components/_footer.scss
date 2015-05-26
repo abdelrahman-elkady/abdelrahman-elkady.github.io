@@ -3,12 +3,14 @@
   color: white;
 
   .footer-icon-list {
-    padding:0;
-    margin: 35px 0;
+    padding: 0;
+    display: inline-block;
+    margin-bottom: 30px;
+    margin-top: 20px;
     li {
       display: inline;
     }
-    a{
+    a {
       text-decoration: none;
     }
   }
@@ -22,7 +24,16 @@
         @include opacity(1);
       }
     }
-
     padding: 0 10px;
+  }
+
+  #copyright {
+    color: white;
+    background-color: darken($primary-blue-color,30%);
+    p {
+      @include opacity(0.5);
+      margin: 0;
+      padding:5px 0;
+    }
   }
 }
