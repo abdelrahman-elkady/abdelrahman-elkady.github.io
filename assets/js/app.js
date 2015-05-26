@@ -2,7 +2,9 @@
    * Smooth Scroll
    */
   $(document).ready(function() {
-    $('a').smoothScroll();
+    $('a').smoothScroll({
+      speed: 800
+    });
   });
 
   /*
