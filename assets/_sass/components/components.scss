@@ -2,21 +2,63 @@
   margin-top: 50px;
 }
 
+.profile-image {
+  @include circular-image(250px);
+  margin-top: 20vh;
+}
+
 .icon-based-skill-card {
-  // background-color: lighten($primary-blue-color,30%);
   padding: 20px 10px;
-  margin:25px 0;
+  margin: 25px 0;
   .skill-icon {
-    color: $secondary-orange-color;
+    color: $secondary-green-color;
   }
-  .skill-description{
+  .skill-description {
     margin-top: 25px;
   }
 }
+
 .section {
-  padding: 70px 0px;
+  padding: 70px 0;
 }
+
 .blue-section {
-  // background-color: lighten($primary-blue-color,10%);
-  width:100%;
+  width: 100%;
+}
+
+#about-card {
+  margin: 90px 0;
+  padding: 10px 60px;
+
+  .sub-header {
+    color: darken($primary-blue-color,5%);
+    line-height: $base-line-height * 1.5;
+  }
+
+  .about-image {
+    text-align: center;
+    margin-top: 45px;
+    img {
+      @include circular-image(210px);
+      border: 2px solid $secondary-green-color;
+    }
+  }
+
+  .bio {
+    margin-bottom: 15px;
+
+    p {
+      color: $grey-color-dark;
+    }
+  }
+
+  .presonal-info-table {
+
+    th {
+      padding-right: 15px;
+    }
+    td {
+      padding: 5px 0;
+    }
+  }
 }

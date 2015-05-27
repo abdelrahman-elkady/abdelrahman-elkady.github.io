@@ -21,5 +21,11 @@
      * Adding copyright with current year
      */
     var copyrightText = document.createTextNode('\u00A9 abdelrahman elkady ' + (new Date()).getFullYear());
-    $('#copyright').append($('<p>').append(copyrightText));
+    $('#copyright').append($('<p>').attr('class','paragraph-slim').append(copyrightText));
+
+    /*
+     * Calculating my age :3
+     */
+     var age = (new Date()).getFullYear() - 1995 ;
+     $('#age-row').append(age + ' Years')
   });

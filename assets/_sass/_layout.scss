@@ -7,11 +7,6 @@
   min-height: 790px;
   color:white;
 
-  .profile-image {
-    @include circular-image(250px);
-    margin-top: 20vh;
-  }
-
   .main-name {
     text-shadow: 2px 2px 4px rgba(6, 57, 102, 1);
     font-size: 4.5rem;
