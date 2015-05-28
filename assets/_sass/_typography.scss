@@ -5,10 +5,10 @@
   font-weight: 600;
   font-size: 1.1em;
 }
-.skill-title {
+.card-title {
   font-weight: 400;
 }
-.skill-description {
+.card-description {
   @extend .paragraph-slim;
   padding: 0 15px;
   font-size: $base-font-size * 0.9;
