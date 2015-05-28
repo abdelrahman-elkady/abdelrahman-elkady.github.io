@@ -9,12 +9,18 @@
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
 }
 
-@mixin opacity($percentage){
+@mixin opacity($percentage) {
   -webkit-filter: opacity($percentage);
-  filter: opacity($percentage);
+  filter:opacity($percentage);
+}
+
+@mixin brightness($percentage) {
+  -webkit-filter: contrast($percentage);
+  -webkit-filter: brightness($percentage);
+  filter:brightness($percentage);
 }

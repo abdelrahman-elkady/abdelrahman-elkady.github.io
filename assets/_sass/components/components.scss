@@ -1,3 +1,4 @@
+
 .button-more {
   margin-top: 50px;
 }
@@ -15,6 +16,17 @@
   }
   .card-description {
     margin-top: 25px;
+  }
+
+  .btn {
+    background-color: $secondary-green-color !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 15px;
+  }
+
+  .btn-icon {
+    padding-right: 25px;
   }
 }
 
@@ -49,6 +61,7 @@
   }
 
   .presonal-info-table {
+    margin: 15px 0;
 
     th {
       padding-right: 15px;
@@ -57,4 +70,26 @@
       padding: 5px 0;
     }
   }
+}
+.icon-list {
+  padding: 0;
+  display: inline-block;
+  margin-top:70px;
+  margin-bottom:30px;
+  li {
+    display: inline;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.list-icon {
+  img {
+    width: 40px;
+    height: 40px;
+    &:hover {
+      @include brightness(140%);
+    }
+  }
+  padding: 0 10px;
 }

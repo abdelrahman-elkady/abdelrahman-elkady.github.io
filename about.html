@@ -48,13 +48,92 @@ permalink: /about/
 
   <div class="row">
     <div class="col-md-6">
-        
+      <div class="icon-based-card shadow-z-1">
+        <h1 class="text-center card-icon">
+          <span class="mdi-action-work icon-2x"></span>
+        </h1>
+
+        <h3 class="card-title text-center">
+          Hire me
+        </h3>
+
+        <p class="card-description">
+          WOW ! , You got a job for me ? check my CV then .. I will be very happy to get in contact with you ;)
+        </p>
+
+        <a href="{{site.baseurl}}/assets/files/cv.pdf" class="btn btn-success btn-icon">
+          <span class="mdi-file-file-download"></span> My CV</a>
+
+      </div>
     </div>
 
     <div class="col-md-6">
+      <div class="icon-based-card shadow-z-1">
+        <h1 class="text-center card-icon">
+          <span class="fa fa-eye fa-2x"></span>
+        </h1>
 
+        <h3 class="card-title text-center">
+          Stalker ?
+        </h3>
+
+        <p class="card-description">
+          Ok This is one section for stalkers ! , If you need more accounts/connections then take a look here !
+        </p>
+
+        <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#stalk-modal"> Stalk !</a>
+
+      </div>
     </div>
   </div>
   <!-- /row -->
 </div>
 <!-- /container -->
+
+<!-- Modal -->
+<div class="modal fade" id="stalk-modal" tabindex="-1" role="dialog" aria-labelledby="Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="mdi-navigation-close"></i></span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Stalkers Appreciation !</h4>
+      </div>
+      <div class="modal-body">
+        <div class="centered">
+          <ul class='icon-list'>
+            <li class='list-icon'>
+              <a href="https://www.facebook.com/{{site.facebook_account}}">
+                <img src="{{site.baseurl}}/assets/icons/facebook500.png" alt="facebook">
+              </a>
+            </li>
+
+            <li class='list-icon'>
+              <a href="http://steamcommunity.com/id/{{site.steam_account}}">
+                <img src="{{site.baseurl}}/assets/icons/steam.png" alt="steam">
+              </a>
+            </li>
+
+            <li class='list-icon'>
+              <a href="https://instagram.com/{{site.instagram_account}}">
+                <img src="{{site.baseurl}}/assets/icons/instagram.png" alt="instagram">
+              </a>
+            </li>
+
+            <li class='list-icon'>
+              <a href="http://stackoverflow.com/users/{{site.stackoverflow_id}}">
+                <img src="{{site.baseurl}}/assets/icons/stackoverflow.png" alt="stackoverflow">
+              </a>
+            </li>
+          </ul>
+          <!-- /icon-list -->
+        </div>
+        <!-- /centered -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Thanks</button>
+      </div>
+    </div>
+  </div>
+</div>
