@@ -1,4 +1,3 @@
-
 .button-more {
   margin-top: 50px;
 }
@@ -59,23 +58,24 @@
       color: $grey-color-dark;
     }
   }
+}
 
-  .presonal-info-table {
-    margin: 15px 0;
+.presonal-info-table {
+  margin: 15px 0;
 
-    th {
-      padding-right: 15px;
-    }
-    td {
-      padding: 5px 0;
-    }
+  th {
+    padding-right: 15px;
+  }
+  td {
+    padding: 5px 0;
   }
 }
+
 .icon-list {
   padding: 0;
   display: inline-block;
-  margin-top:70px;
-  margin-bottom:30px;
+  margin-top: 70px;
+  margin-bottom: 30px;
   li {
     display: inline;
   }
