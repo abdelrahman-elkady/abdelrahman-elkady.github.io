@@ -42,4 +42,17 @@
      */
     var age = (new Date()).getFullYear() - 1995;
     $('#age-row').append(age + ' Years')
+
+
+    /*
+     * Owl Carousel
+     */
+
+     $('#hide-me-photos').owlCarousel({
+
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+      items : 3
+     });
+
   });

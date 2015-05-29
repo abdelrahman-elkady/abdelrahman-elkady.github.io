@@ -97,3 +97,25 @@
   }
   padding: 0 10px;
 }
+
+.project-card {
+  padding: 20px 40px;
+
+  h2 {
+    color: $secondary-green-color;
+  }
+
+  .sub-header {
+    color:$grey-color-dark;
+  }
+}
+
+
+.item {
+  margin:0 10px;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}

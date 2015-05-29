@@ -44,6 +44,13 @@
   }
 }
 
+.project-card {
+  .sub-header {
+    @extend .paragraph-slim;
+    font-size: $base-font-size * 0.9;
+  }
+}
+
 .icon-2x {
   font-size: 1.9em;
 }
