@@ -1,34 +1,34 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name='description' content='{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}'>
 
   <!-- Material Design Preloader -->
-  <link rel="stylesheet" type="text/css" href="{{site.baseurl}}/assets/bower_components/material-preloader/css/materialPreloader.min.css">
+  <link rel='stylesheet' type='text/css' href='{{site.baseurl}}/assets/bower_components/material-preloader/css/materialPreloader.min.css'>
 
   <!-- Bootstrap -->
-  <link href="{{site.baseurl}}/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href='{{site.baseurl}}/assets/bower_components/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet'>
 
   <!-- Bootstrap material stylesheets -->
-  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
-  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/material.min.css" rel="stylesheet">
-  <link href="{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+  <link href='{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/roboto.min.css' rel='stylesheet'>
+  <link href='{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/material.min.css' rel='stylesheet'>
+  <link href='{{site.baseurl}}/assets/bower_components/bootstrap-material-design/dist/css/ripples.min.css' rel='stylesheet'>
 
   <!-- font awesome -->
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/font-awesome/css/font-awesome.css ">
+  <link rel='stylesheet' href='{{site.baseurl}}/assets/bower_components/font-awesome/css/font-awesome.css '>
 
   <!-- Owl Carousel -->
-  <link rel="stylesheet" href="{{site.baseurl}}/assets/bower_components/OwlCarousel/owl-carousel/owl.carousel.css">
+  <link rel='stylesheet' href='{{site.baseurl}}/assets/bower_components/OwlCarousel/owl-carousel/owl.carousel.css'>
 
   <!-- Owl Carousel Theme -->
-  <link rel="stylesheet" href="{{site.baseurl}}assets/bower_components/OwlCarousel/owl-carousel/owl.theme.css">
+  <link rel='stylesheet' href='{{site.baseurl}}assets/bower_components/OwlCarousel/owl-carousel/owl.theme.css'>
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet " href="{{site.baseurl}}/assets/css/main.css ">
+  <link rel='stylesheet ' href='{{site.baseurl}}/assets/css/main.css '>
 
-  <link rel="canonical " href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }} ">
-  <link rel="alternate " type="application/rss+xml " title="{{ site.title }} " href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }} " />
+  <link rel='canonical ' href='{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }} '>
+  <link rel='alternate ' type='application/rss+xml ' title='{{ site.title }} ' href='{{ ' /feed.xml ' | prepend: site.baseurl | prepend: site.url }} ' />
 </head>
