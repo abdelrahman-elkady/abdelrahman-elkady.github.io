@@ -1,0 +1,18 @@
+{
+  "name": "material-preloader",
+  "authors": [
+    "Aaron Lumsden <aaronlumsden@me.com>"
+  ],
+  "description": "A jQuery plugin that recreates the Material Design pre-loader (as seen on inbox)",
+  "homepage": "https://github.com/aarondo/Material-Preloader",
+  "_release": "2497663d02",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "2497663d025226dd5230f68cab1f9dd26b2b3c61"
+  },
+  "_source": "https://github.com/aarondo/Material-Preloader.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/aarondo/Material-Preloader.git",
+  "_direct": true
+}
