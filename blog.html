@@ -6,7 +6,14 @@ title: kady | blog
 
 <div class='row'>
   <div class='centered'>
-    <h1><i class='fa fa-wrench fa-xxlg'></i></h1>
-    <h1 class='section'>Under Construction <i class='fa fa-cog fa-spin'></i></h1>
+    <div class="card">
+      {% for post in site.posts %}
+        <h1>{{post.title}}</h1>
+        <a href="{{post.url}}">Read More...</a>
+      {% endfor %}
+    </div>
+    <!-- /.card -->
   </div>
+  <!-- /.centered -->
 </div>
+<!-- /.row  -->
