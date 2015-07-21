@@ -67,9 +67,9 @@
 
 
 .highlight {
-    background: #272822;
+    background: $highlight-background;
 
-    .hll { background-color: #272822 }
+    .hll { background-color: $highlight-background }
     .c { color: #75715e } /* Comment */
     .err { color: #960050; background-color: #1e0010 } /* Error */
     .k { color: #66d9ef } /* Keyword */
