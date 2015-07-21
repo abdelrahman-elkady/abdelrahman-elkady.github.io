@@ -5,15 +5,18 @@ title: kady | blog
 ---
 
 <div class='row'>
-  <div class='centered'>
-    <div class="card">
-      {% for post in site.posts %}
-        <h1>{{post.title}}</h1>
-        <a href="{{post.url}}">Read More...</a>
-      {% endfor %}
+  {% for post in site.posts %}
+  <div class="post-preview-card shadow-z-2">
+
+    <img src="{{site.baseurl}}/assets/images/{{post.cover}}" alt="" />
+    <div class="post-preview">
+      <h1 class="post-title">{{post.title}}</h1>
+      <p>{{ post.content | truncatewords: 100 }}</p>
+      <a class="btn btn-info" href="{{post.url}}">View</a>
     </div>
-    <!-- /.card -->
+    <!-- /.post-preview -->
   </div>
-  <!-- /.centered -->
+  <!-- /.post-preview-card -->
+  {% endfor %}
 </div>
 <!-- /.row  -->
