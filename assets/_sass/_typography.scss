@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,500,900);
 
 .logo-code {
   color: $secondary-green-color;
@@ -6,10 +6,13 @@
   font-size: 1.1em;
 }
 
+
 .icon-based-card {
   .card-title {
     font-weight: 400;
   }
+
+
   .card-description {
     @extend .paragraph-slim;
     padding: 0 15px;
@@ -17,15 +20,20 @@
     line-height: 23px;
   }
 
-  .btn , .btn-icon > span {
+
+  .btn,
+  .btn-icon > span {
     font-size: 16px;
   }
 }
+
 
 .paragraph-slim {
   font-family: "Roboto",sans-serif;
   font-weight: 300;
 }
+
+
 #about-card {
 
   .sub-header {
@@ -33,16 +41,19 @@
     font-size: $base-font-size * 1.8;
   }
 
+
   p {
     @extend .paragraph-slim;
     font-size: $base-font-size * 0.9;
   }
+
 
   .presonal-info-table {
     @extend .paragraph-slim;
     font-size: $base-font-size * 0.9;
   }
 }
+
 
 .project-card {
   .sub-header {
@@ -51,10 +62,18 @@
   }
 }
 
+
 .post-preview {
+
+  .post-title {
+    font-family: $roboto-font;
+    font-weight: 500;
+  }
+
+
   p {
-      font-family: "Roboto",sans-serif;
-      font-weight: 300;
+    font-family: $roboto-font;
+    font-weight: 300;
   }
 }
 
@@ -63,6 +82,48 @@
   font-size: 1.9em;
 }
 
+
 .fa-xxlg {
   font-size: 14em;
+}
+
+
+.post-preview-card {
+
+  .post-preview {
+
+    p {
+      font-weight: 200;
+      text-align: justify;
+    }
+  }
+}
+
+
+.post-meta {
+  color: $grey-color-dark;
+  font-size: 15px;
+  font-weight: 500;
+
+  span {
+    vertical-align: text-bottom;
+    padding-right: 5px;
+    font-size: 20px;
+  }
+}
+
+
+.post {
+
+  .post-title {
+    font-family: $roboto-font;
+    font-weight: 900;
+  }
+
+
+  .post-content {
+    font-family: $roboto-font;
+    font-weight: 300;
+    font-size: 1.4em;
+  }
 }

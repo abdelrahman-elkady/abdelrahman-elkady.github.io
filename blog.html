@@ -4,9 +4,8 @@ permalink: /blog/
 title: kady | blog
 ---
 
-
+{% for post in site.posts %}
 <div class='row'>
-  {% for post in site.posts %}
   <div class="post-preview-card shadow-z-2">
 
 
@@ -15,16 +14,16 @@ title: kady | blog
     <div class="post-preview">
       <h1 class="post-title">{{post.title}}</h1>
 
-      <div class="post-meta row">
-        <div class="col-md-3">
+      <div class="post-meta">
+
           <span class='mdi-action-event'></span>
           {{post.date | date: '%b %d, %Y | %I:%M %p'}}
-        </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
 
-        <div class="col-md-3">
+
           <span class='mdi-image-timer'></span>
           {{ post.reading-time }} Min. reading
-        </div>
+          &nbsp;&nbsp;&nbsp;&nbsp;
 
       </div>
       <!-- /.post-meta -->
@@ -35,6 +34,6 @@ title: kady | blog
     <!-- /.post-preview -->
   </div>
   <!-- /.post-preview-card -->
-  {% endfor %}
 </div>
 <!-- /.row  -->
+{% endfor %}
