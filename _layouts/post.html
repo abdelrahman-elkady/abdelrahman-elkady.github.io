@@ -20,7 +20,15 @@ layout: default
       {{ content }}
     </div>
     <!-- /.post-content -->
+
+
+          {% if page.disqus %}
+            {% include disqus.html %}
+          {% endif %}
+
+
   </div>
   <!-- /.post -->
+
 </div>
 <!-- /.container -->
