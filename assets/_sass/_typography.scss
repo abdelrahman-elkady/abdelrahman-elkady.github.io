@@ -6,12 +6,10 @@
   font-size: 1.1em;
 }
 
-
 .icon-based-card {
   .card-title {
     font-weight: 400;
   }
-
 
   .card-description {
     @extend .paragraph-slim;
@@ -20,40 +18,33 @@
     line-height: 23px;
   }
 
-
   .btn,
   .btn-icon > span {
     font-size: 16px;
   }
 }
 
-
 .paragraph-slim {
   font-family: "Roboto",sans-serif;
   font-weight: 300;
 }
 
-
 #about-card {
-
   .sub-header {
     font-weight: 600;
     font-size: $base-font-size * 1.8;
   }
-
 
   p {
     @extend .paragraph-slim;
     font-size: $base-font-size * 0.9;
   }
 
-
   .presonal-info-table {
     @extend .paragraph-slim;
     font-size: $base-font-size * 0.9;
   }
 }
-
 
 .project-card {
   .sub-header {
@@ -62,14 +53,11 @@
   }
 }
 
-
 .post-preview {
-
   .post-title {
     font-family: $roboto-font;
     font-weight: 500;
   }
-
 
   p {
     font-family: $roboto-font;
@@ -77,28 +65,29 @@
   }
 }
 
+/* Font icon sizes */
 
 .icon-2x {
-  font-size: 1.9em;
+  font-size: 2.1em;
 }
-
 
 .fa-xxlg {
   font-size: 14em;
 }
 
 
+#nav-menu-icon {
+  font-size: 30px;
+}
+
 .post-preview-card {
-
   .post-preview {
-
     p {
       font-weight: 200;
       text-align: justify;
     }
   }
 }
-
 
 .post-meta {
   color: $grey-color-dark;
@@ -112,14 +101,11 @@
   }
 }
 
-
 .post {
-
   .post-title {
     font-family: $roboto-font;
     font-weight: 900;
   }
-
 
   .post-content {
     font-family: $roboto-font;
