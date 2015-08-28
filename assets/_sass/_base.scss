@@ -80,3 +80,10 @@ ul {
 .extra-margin {
   margin: 150px 0;
 }
+
+.no-underline {
+  text-decoration:none;
+  &:hover {
+    text-decoration:none;
+  }
+}

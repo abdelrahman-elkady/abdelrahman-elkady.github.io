@@ -30,7 +30,7 @@
  */
 #about-card {
   margin-top: 90px;
-  padding: 10px 60px;
+  padding:20px 0;
 
   .sub-header {
     color: darken($primary-blue-color,5%);
@@ -40,7 +40,7 @@
 
   .about-image {
     text-align: center;
-    margin-top: 45px;
+    margin-top: 22px;
     img {
       @include circular-image(210px);
       border: 2px solid $secondary-green-color;
@@ -48,11 +48,16 @@
   }
 
 
-  .bio {
+  .about-info {
     margin-bottom: 15px;
+    padding-left: 30px;
 
     p {
       color: $grey-color-dark;
+    }
+
+    h3 {
+      margin-top: 7px;
     }
   }
 }
