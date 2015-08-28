@@ -8,3 +8,12 @@
 .navbar-brand {
   font-size: 1.1em;
 }
+
+// Fixing line height of brand on smaller devices
+.navbar{
+  .navbar-brand{
+    @media only screen and (max-width: 768px){
+      line-height: 50px;
+    }
+  }
+}
