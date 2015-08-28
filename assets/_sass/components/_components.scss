@@ -77,3 +77,10 @@ padding: 0 10px;
   margin-bottom: 15px;
   color: $grey-color-dark;
 }
+
+#intel {
+  color:transparent;
+  * {
+    margin:0;
+  }
+}

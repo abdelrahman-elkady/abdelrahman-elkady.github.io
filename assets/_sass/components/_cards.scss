@@ -41,9 +41,11 @@
   .about-image {
     text-align: center;
     margin-top: 22px;
+
     img {
       @include circular-image(210px);
       border: 2px solid $secondary-green-color;
+      object-fit: cover;
     }
   }
 
