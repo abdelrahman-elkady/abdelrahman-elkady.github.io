@@ -36,15 +36,14 @@ blockquote {
  */
 pre,
 code {
-  font-size: 15px;
-  border: 1px solid $grey-color-light;
-  border-radius: 3px;
+  font-size: 18px;
+  border-radius: 0;
   background-color: $highlight-background;
   color:$secondary-green-color;
 }
 
 code {
-  padding: 1px 5px;
+  padding: 2px 8px;
 }
 
 pre {
