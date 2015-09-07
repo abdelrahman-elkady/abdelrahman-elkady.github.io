@@ -66,5 +66,6 @@
     .vg { color: #f8f8f2 } /* Name.Variable.Global */
     .vi { color: #f8f8f2 } /* Name.Variable.Instance */
     .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-    pre { overflow: auto;}
+
+    pre { overflow-x: auto; code { white-space: pre; * { white-space: nowrap; } } }
 }
