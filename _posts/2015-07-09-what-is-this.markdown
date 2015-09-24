@@ -6,7 +6,7 @@ categories: programming-concepts oop java
 author: 'kady'
 cover: 'this.png'
 reading-time: 10
-disqus: false
+disqus: true
 ---
 
 He asked me about that word again, he was happy learning and advancing in his **Java** programming course .. he told me that
