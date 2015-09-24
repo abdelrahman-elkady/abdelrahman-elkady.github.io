@@ -11,3 +11,14 @@
   @extend .centered ;
   width: 80%;
 }
+
+.post-sharing {
+  margin-top: 25px;
+
+  img {
+    border-radius: 50px;
+    margin: 0 2px;
+    width: 30px;
+    height: 30px;
+  }
+}

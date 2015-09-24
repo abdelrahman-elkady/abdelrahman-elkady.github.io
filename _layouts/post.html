@@ -18,13 +18,14 @@ layout: default
     <!-- /.post-meta -->
     <div class="post-content">
       {{ content }}
+      {% include social-sharing.html %}
     </div>
     <!-- /.post-content -->
 
 
-          {% if page.disqus %}
-            {% include disqus.html %}
-          {% endif %}
+    {% if page.disqus %}
+      {% include disqus.html %}
+    {% endif %}
 
 
   </div>

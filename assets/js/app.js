@@ -55,4 +55,17 @@ $(document).ready(function() {
     items : 3
    });
 
+
+   /*
+    * Social sharing icons hover shadow
+    */
+    $('.post-sharing img').mouseover(function(){
+      $(this).addClass('shadow-z-2');
+    });
+
+    $('.post-sharing img').mouseout(function(){
+      $(this).removeClass('shadow-z-2');
+    });
+
+
 });
