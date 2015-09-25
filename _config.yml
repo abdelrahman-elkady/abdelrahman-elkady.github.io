@@ -1,7 +1,7 @@
 # Site settings
 title: kady
 description: > # this means to ignore newlines until "baseurl:"
-  Just my portfolio ! , A personal website for the superhero ME !
+  My portfolio and personal blog
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://abdelrahman-elkady.github.io" # the base hostname & protocol for your site
 port: 3000
