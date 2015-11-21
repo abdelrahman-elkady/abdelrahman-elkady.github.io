@@ -19,6 +19,8 @@ exclude:
   - "bower_components"
   - "bower.json"
 
+permalink: blog/:year/:month/:day/:title.html
+
 # links info
 
 twitter_account: abdelrahmankady
