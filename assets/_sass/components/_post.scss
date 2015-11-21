@@ -3,12 +3,12 @@
 
   .post-content {
     margin: 50px auto;
-    width:80%;
+    width: 80%;
   }
 }
 
 .disqus {
-  @extend .centered ;
+  @extend .centered;
   width: 80%;
 }
 
@@ -21,4 +21,10 @@
     width: 30px;
     height: 30px;
   }
+}
+
+.post-image {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 100%;
 }
