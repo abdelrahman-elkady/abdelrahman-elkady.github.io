@@ -11,6 +11,7 @@
 .profile-image {
   @include circular-image(250px);
   margin-top: 20vh;
+  object-fit: cover;
 }
 
 
