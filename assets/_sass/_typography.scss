@@ -1,120 +1,128 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,500,900);
+@import 'https://fonts.googleapis.com/css?family=Roboto+Mono:300';
+
+code,
+kbd,
+pre,
+samp {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+}
 
 .logo-code {
-  color: $secondary-green-color;
-  font-weight: 600;
-  font-size: 1.1em;
+    color: $secondary-green-color;
+    font-weight: 600;
+    font-size: 1.1em;
 }
 
 .icon-based-card {
-  .card-title {
-    font-weight: 400;
-  }
+    .card-title {
+        font-weight: 400;
+    }
 
-  .card-description {
-    @extend .paragraph-slim;
-    padding: 0 15px;
-    font-size: $base-font-size * 0.9;
-    line-height: 23px;
-  }
+    .card-description {
+        @extend .paragraph-slim;
+        padding: 0 15px;
+        font-size: $base-font-size * 0.9;
+        line-height: 23px;
+    }
 
-  .btn,
-  .btn-icon > span {
-    font-size: 16px;
-  }
+    .btn,
+    .btn-icon > span {
+        font-size: 16px;
+    }
 }
 
 .paragraph-slim {
-  font-family: "Roboto",sans-serif;
-  font-weight: 300;
+    font-family: "Roboto",sans-serif;
+    font-weight: 300;
 }
 
 #about-card {
-  .sub-header {
-    font-weight: 600;
-    font-size: $base-font-size * 1.8;
-  }
+    .sub-header {
+        font-weight: 600;
+        font-size: $base-font-size * 1.8;
+    }
 
-  p {
-    @extend .paragraph-slim;
-    font-size: $base-font-size * 0.9;
-  }
+    p {
+        @extend .paragraph-slim;
+        font-size: $base-font-size * 0.9;
+    }
 
-  .presonal-info-table {
-    @extend .paragraph-slim;
-    font-size: $base-font-size * 0.9;
-  }
+    .presonal-info-table {
+        @extend .paragraph-slim;
+        font-size: $base-font-size * 0.9;
+    }
 }
 
 .project-card {
-  .sub-header {
-    @extend .paragraph-slim;
-    font-size: $base-font-size * 0.9;
-  }
+    .sub-header {
+        @extend .paragraph-slim;
+        font-size: $base-font-size * 0.9;
+    }
 }
 
 .post-preview {
-  .post-title {
-    font-family: $roboto-font;
-    font-weight: 500;
-  }
+    .post-title {
+        font-family: $roboto-font;
+        font-weight: 500;
+    }
 
-  p {
-    font-family: $roboto-font;
-    font-weight: 300;
-  }
+    p {
+        font-family: $roboto-font;
+        font-weight: 300;
+    }
 }
 
 /* Font icon sizes */
 
 .icon-2x {
-  font-size: 2.1em;
+    font-size: 2.1em;
 }
 
 .fa-xxlg {
-  font-size: 14em;
+    font-size: 14em;
 }
 
-
 #nav-menu-icon {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .post-preview-card {
-  .post-preview {
-    p {
-      font-weight: 200;
-      text-align: justify;
+    .post-preview {
+        p {
+            font-weight: 200;
+            text-align: justify;
+        }
     }
-  }
 }
 
 .post-meta {
-  color: $grey-color-dark;
-  font-size: 15px;
-  font-weight: 500;
+    color: $grey-color-dark;
+    font-size: 15px;
+    font-weight: 500;
 
-  span {
-    vertical-align: text-bottom;
-    padding-right: 5px;
-    font-size: 20px;
-  }
+    span {
+        vertical-align: text-bottom;
+        padding-right: 5px;
+        font-size: 20px;
+    }
 }
 
 .post {
-  .post-title {
-    font-family: $roboto-font;
-    font-weight: 900;
-    font-size: 3em;
-  }
-
-  .post-content {
-    font-family: $roboto-font;
-    font-weight: 300;
-    font-size: 1.5em;
-
-    figure > pre > code {
-      font-size: 16px;
+    .post-title {
+        font-family: $roboto-font;
+        font-weight: 900;
+        font-size: 3em;
     }
-  }
+
+    .post-content {
+        font-family: $roboto-font;
+        font-weight: 300;
+        font-size: 1.5em;
+
+        figure > pre > code {
+            font-size: 16px;
+        }
+    }
 }
