@@ -29,7 +29,7 @@ Now you are ready to start setting up your development environment, first we nee
 
 After Downloading the archive you need to extract it somewhere, it's up to you where to extract the folder, but it's a [good practice][where-to-install-software] to install user programs in `/opt/` or `/usr/local` on Linux machines, for me I choose `/opt/` to move the extracted directory to
 
-{% highlight bash %}
+{% highlight shell %}
 $ cd /your/installation/path
 $ sudo mv android-studio /opt/
 {% endhighlight %}
@@ -37,7 +37,7 @@ $ sudo mv android-studio /opt/
 <br>
 2. If you are running a 64-bit machine Install `lib32ncurses5-dev` and `lib32stdc++6` packages as it's required for building your apps, you can install it by running the following commands :
 
-{% highlight bash %}
+{% highlight shell %}
 $ sudo apt-get install lib32ncurses5-dev
 $ sudo apt-get install lib32stdc++6
 $ sudo apt-get install lib32z1
@@ -45,7 +45,7 @@ $ sudo apt-get install lib32z1
 
 <br>
 3. Navigate to location that you have the extracted directory and run `bin/studio.sh` executable to run android studio
-{% highlight bash %}
+{% highlight shell %}
 $ cd path/of/extracted/android-studio/bin
 $ ./studio.sh
 {% endhighlight %}
@@ -65,15 +65,16 @@ $ ./studio.sh
 <br>
 6. Now if you are managing to work with the emulator and your machine is capable of running hardware acceleration you should go for it, it will increase the performance of your emulated device and you will be **happy!** , [here][haxm] you can find how to manage kvm on Linux in order to enable hardware acceleration, in general you can check whether your machine is supporting hardware acceleration using this commands
 
-{% highlight bash %}
+{% highlight shell %}
 $ sudo apt-get install cpu-checker
 $ kvm-ok
 {%endhighlight%}
 
 You should get a response like :
 {% highlight console %}
-INFO: /dev/kvm exists
-KVM acceleration can be used
+$ INFO: /dev/kvm exists    
+
+$ KVM acceleration can be used
 {%endhighlight%}
 
 If your machine supports acceleration you can follow [this guideline][kvm-installation] to install KVM on your machine

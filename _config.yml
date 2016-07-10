@@ -8,7 +8,7 @@ port: 3000
 # Build settings
 markdown: kramdown
 
-highlighter: pygments
+highlighter: rouge
 
 # Assets
 sass:

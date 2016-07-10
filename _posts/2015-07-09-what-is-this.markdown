@@ -65,8 +65,7 @@ System.out.println(Integer.toHexString(System.identityHashCode(c2)));
 
 That should print something like this to the console, which means we can check the reference of the Objects
 
-{% highlight console %}    
-
+{% highlight shell %}
 > 2a139a55
 > 15db9742
 
