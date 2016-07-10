@@ -7,7 +7,14 @@
 
     > p {
       margin-bottom: 30px;
+
+      // Images and caption
+      img + em {
+        font-size: 0.75em;
+      }
+
     }
+
 
   }
 
