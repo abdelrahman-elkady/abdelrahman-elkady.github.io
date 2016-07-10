@@ -46,6 +46,13 @@
       @include circular-image(210px);
       border: 2px solid $secondary-green-color;
       object-fit: cover;
+
+      user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
   }
 
