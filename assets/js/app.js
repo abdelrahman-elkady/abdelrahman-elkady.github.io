@@ -25,7 +25,7 @@ $(document).ready(function() {
    */
   var adjustMe = function() {
     var navHeight = $('.navbar-material-blue.navbar').height();
-    $('.home-header').css('margin-top', -1 * navHeight + 'px');
+    $('.home-header').css('margin-top', navHeight + 'px');
   };
 
   $(window).resize(adjustMe())
@@ -42,19 +42,6 @@ $(document).ready(function() {
    */
   var age = (new Date()).getFullYear() - 1995; // stalkers who dive into code, it's 12/1994 !
   $('#age-row').append(age + ' Years')
-
-
-  /*
-   * Owl Carousel
-   */
-
-   $('#hide-me-photos').owlCarousel({
-
-    autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-    items : 3
-   });
-
 
    /*
     * Social sharing icons hover shadow

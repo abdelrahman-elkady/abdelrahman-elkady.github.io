@@ -1,6 +1,7 @@
 #footer {
   background-color: darken($primary-blue-color,20%);
   color: white;
+  min-height: $footer-height;
 
   .footer-icon-list {
     padding: 0;
