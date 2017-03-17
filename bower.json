@@ -17,7 +17,6 @@
     "font-awesome": "~4.3.0",
     "bootstrap-material-design": "~0.3.0",
     "bootstrap": "~3.3.4",
-    "jquery-smooth-scroll": "~1.5.5",
     "material-preloader": "https://github.com/aarondo/Material-Preloader.git"
   }
 }

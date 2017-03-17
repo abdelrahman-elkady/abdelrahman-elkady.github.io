@@ -14,13 +14,6 @@ $(document).ready(function() {
   });
 
   /*
-   * Smooth Scroll
-   */
-  $('a').smoothScroll({
-    speed: 800
-  });
-
-  /*
    * Adjusting main section margin to the nav height
    */
   var adjustMe = function() {
