@@ -25,6 +25,10 @@
   margin-top: 1rem;
 }
 
+.hero__social-links > li > .resume-item {
+  font-weight: bold;
+}
+
 .hero__skip-link {
   align-self: center;
   cursor: pointer;
