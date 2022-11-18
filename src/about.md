@@ -1,14 +1,12 @@
 ---
-title: About Aidan Charles Powell
+title: About
 layout: about.njk
-name: Aidan Charles Powell
-image: '/images/me.jpeg'
+name: Abdelrahman Elkady
+image: '/images/headshot.webp'
 ---
 
-Aidan Charles Powell is a 23-year-old health centre receptionist who enjoys watching television, eating out and social media. He is generous and giving, but can also be very rude and a bit lazy.
+I am Abdelrahman Elkady, a software engineer with 6+ years of experience, mainly focused on backend development and developer experience tooling.
 
-He is a Jedi who defines himself as straight. He has a degree in medicine. He is a vegetarian. He is obsessed with vintage dresses.
+I like building tools and products that can deliver an impact, without sacrificing quality, I am also interested in supporting and mentoring other engineers helping to create better teams and establish more productive environments.
 
-He grew up in a middle class neighbourhood. After his mother died when he was young, he was raised by his father
-
-He is currently married to Maureen Erika Quinn. Maureen is 13 years older than him and works as a sales assistant.
+Throughout my years of experience, I contributed to many tools that helps enhancing the developer experience, helping productivity and efficiency of different teams, I am always looking for new challenges and opportunities to learn and grow.

@@ -2,8 +2,8 @@
   margin-bottom: 2rem;
 }
 
-.about img {
-  border: 4px solid rgba(0, 0, 0, 70%);
+.about__image {
+  border-radius: 50%;
   float: none;
   margin-left: auto;
   margin-right: auto;
