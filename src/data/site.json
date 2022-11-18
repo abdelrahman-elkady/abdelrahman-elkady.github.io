@@ -1,0 +1,42 @@
+{
+  "name": "Abdelrahman Elkady",
+  "description": "My personal website and blog",
+  "url": "https://abdelrahman-elkady.tech",
+  "author": {
+    "name": "Abdelrahman Elkady",
+    "email": "elkadyabdelrahman@gmail.com",
+    "twitterHandle": "abdelrahmankady"
+  },
+  "headerLinks": [
+    {
+      "text": "Blog",
+      "url": "/blog",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about",
+      "external": false
+    }
+  ],
+  "socialLinks": [
+    {
+      "text": "GitHub",
+      "url": "https://github.com/abdelrahman-elkady",
+      "external": true
+    },
+    {
+      "text": "Twitter",
+      "url": "https://twitter.com/abdelrahmankady",
+      "external": true
+    }
+  ],
+  "footerLinks": [
+    {
+      "text": "RSS",
+      "url": "/feed.xml",
+      "external": true
+    }
+  ],
+  "showFooterAttribution": false
+}

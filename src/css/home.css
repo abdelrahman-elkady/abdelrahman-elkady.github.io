@@ -1,0 +1,4 @@
+.underlined-name {
+  text-decoration-line: underline;
+  text-decoration-color: var(--light-green);
+}
