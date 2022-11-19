@@ -21,6 +21,11 @@
   ],
   "socialLinks": [
     {
+      "text": "LinkedIn",
+      "url": "https://www.linkedin.com/in/abdelrahmanelkady/",
+      "external": true
+    },
+    {
       "text": "GitHub",
       "url": "https://github.com/abdelrahman-elkady",
       "external": true
