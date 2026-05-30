@@ -14,16 +14,16 @@ const plugins = [
   }),
 ];
 
-const isDev = process.env.APP_ENV === 'development';
-
-if (!isDev) {
+// Vite sets NODE_ENV=production for `vite build`; only minify there so the
+// dev server keeps serving readable CSS.
+if (process.env.NODE_ENV === 'production') {
   const cssnano = require('cssnano');
 
-  [].push.apply(plugins, [
+  plugins.push(
     cssnano({
       preset: 'default',
-    }),
-  ]);
+    })
+  );
 }
 
 module.exports = { plugins };

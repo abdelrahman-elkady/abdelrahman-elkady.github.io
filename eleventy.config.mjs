@@ -1,7 +1,7 @@
-import fs from 'node:fs';
+import { readdir, copyFile } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
+import EleventyVitePlugin from '@11ty/eleventy-plugin-vite';
 import readingTime from 'eleventy-plugin-reading-time';
 import pluginRss from '@11ty/eleventy-plugin-rss';
 import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
@@ -10,26 +10,49 @@ import { DateTime } from 'luxon';
 
 import markdownIt from './config/markdown-it.mjs';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-const isDev = process.env.ELEVENTY_ENV === 'development';
 const isProd = process.env.ELEVENTY_ENV === 'production';
 
-const manifestPath = path.resolve(
-  __dirname,
-  'public',
-  'assets',
-  'manifest.json'
-);
-
-const manifest = isDev
-  ? {
-      'main.js': '/assets/main.js',
-      'main.css': '/assets/main.css',
-    }
-  : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
+// Vite's MPA build only emits HTML plus the JS/CSS it bundles, so the non-HTML
+// templates Eleventy generates (feed.xml, sitemap.xml, robots.txt) would be
+// dropped. This inline Vite plugin copies any root-level .xml/.txt files from
+// the build root into the output once the bundle is written. It runs inside
+// the Vite build (while the temp root still exists), avoiding the race that an
+// `eleventy.after` handler would have with the plugin's own build step.
+function copyEleventyExtras() {
+  let resolvedConfig;
+  return {
+    name: 'eleventy-copy-extras',
+    configResolved(config) {
+      resolvedConfig = config;
+    },
+    async closeBundle() {
+      const { root, build } = resolvedConfig;
+      const entries = await readdir(root, { withFileTypes: true });
+      await Promise.all(
+        entries
+          .filter((entry) => entry.isFile() && /\.(xml|txt)$/.test(entry.name))
+          .map((entry) =>
+            copyFile(
+              path.join(root, entry.name),
+              path.join(build.outDir, entry.name)
+            )
+          )
+      );
+    },
+  };
+}
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      // Static files that must keep stable, un-hashed URLs (images, the CV)
+      // live in `static/`. Vite copies its contents verbatim to the output
+      // root and leaves `/images/...`-style references untouched.
+      publicDir: 'static',
+      plugins: [copyEleventyExtras()],
+    },
+  });
+
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -47,21 +70,10 @@ export default function (eleventyConfig) {
   });
 
   eleventyConfig.setDataDeepMerge(true);
-  eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
-  eleventyConfig.addPassthroughCopy({ 'src/data/cv.pdf': 'cv.pdf' });
-  eleventyConfig.addWatchTarget(manifestPath);
-
-  eleventyConfig.addShortcode('bundledcss', function () {
-    return manifest['main.css']
-      ? `<link href="${manifest['main.css']}" rel="stylesheet" />`
-      : '';
-  });
-
-  eleventyConfig.addShortcode('bundledjs', function () {
-    return manifest['main.js']
-      ? `<script src="${manifest['main.js']}"></script>`
-      : '';
-  });
+  // main.css / main.js are bundled + content-hashed by Vite out of the build
+  // output, so the source files just need to land on disk for Vite to find.
+  eleventyConfig.addPassthroughCopy({ 'src/css': 'css' });
+  eleventyConfig.addPassthroughCopy({ 'src/js': 'js' });
 
   eleventyConfig.addFilter('excerpt', (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, '');
