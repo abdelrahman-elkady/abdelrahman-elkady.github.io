@@ -1,16 +1,19 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const readingTime = require('eleventy-plugin-reading-time');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const htmlmin = require('html-minifier-terser')
-const { DateTime } = require('luxon');
+import readingTime from 'eleventy-plugin-reading-time';
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import htmlmin from 'html-minifier-terser';
+import { DateTime } from 'luxon';
 
-const markdownIt = require('./config/markdown-it');
+import markdownIt from './config/markdown-it.mjs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const isDev = process.env.ELEVENTY_ENV === 'development';
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isProd = process.env.ELEVENTY_ENV === 'production';
 
 const manifestPath = path.resolve(
   __dirname,
@@ -26,7 +29,7 @@ const manifest = isDev
     }
   : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -46,7 +49,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
   eleventyConfig.addPassthroughCopy({ 'src/data/cv.pdf': 'cv.pdf' });
-  eleventyConfig.setBrowserSyncConfig({ files: [manifestPath] });
+  eleventyConfig.addWatchTarget(manifestPath);
 
   eleventyConfig.addShortcode('bundledcss', function () {
     return manifest['main.css']
@@ -76,7 +79,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('dateToIso', (dateString) => {
-    return new Date(dateString).toISOString()
+    return new Date(dateString).toISOString();
   });
 
   eleventyConfig.addFilter('head', (array, n) => {
@@ -125,8 +128,8 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  eleventyConfig.addTransform('htmlmin', async function(content, outputPath) {
-    if ( outputPath && outputPath.endsWith(".html") && isProd) {
+  eleventyConfig.addTransform('htmlmin', async function (content, outputPath) {
+    if (outputPath && outputPath.endsWith('.html') && isProd) {
       return await htmlmin.minify(content, {
         removeComments: true,
         collapseWhitespace: true,
@@ -150,4 +153,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
-};
+}

@@ -1,5 +1,5 @@
-const markdownIt = require('markdown-it');
-const markdownItEmoji = require('markdown-it-emoji');
+import markdownIt from 'markdown-it';
+import { full as markdownItEmoji } from 'markdown-it-emoji';
 
 const options = {
   html: true,
@@ -9,4 +9,4 @@ const options = {
 
 const configuredMd = markdownIt(options).use(markdownItEmoji);
 
-module.exports = configuredMd;
+export default configuredMd;
