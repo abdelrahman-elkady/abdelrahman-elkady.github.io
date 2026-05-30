@@ -1,32 +1,58 @@
-const fs = require('fs');
-const path = require('path');
+import { readdir, copyFile } from 'node:fs/promises';
+import path from 'node:path';
 
-const readingTime = require('eleventy-plugin-reading-time');
-const pluginRss = require('@11ty/eleventy-plugin-rss');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const htmlmin = require('html-minifier-terser')
-const { DateTime } = require('luxon');
+import EleventyVitePlugin from '@11ty/eleventy-plugin-vite';
+import readingTime from 'eleventy-plugin-reading-time';
+import pluginRss from '@11ty/eleventy-plugin-rss';
+import syntaxHighlight from '@11ty/eleventy-plugin-syntaxhighlight';
+import htmlmin from 'html-minifier-terser';
+import { DateTime } from 'luxon';
 
-const markdownIt = require('./config/markdown-it');
+import markdownIt from './config/markdown-it.mjs';
 
-const isDev = process.env.ELEVENTY_ENV === 'development';
-const isProd = process.env.ELEVENTY_ENV === 'production'
+const isProd = process.env.ELEVENTY_ENV === 'production';
 
-const manifestPath = path.resolve(
-  __dirname,
-  'public',
-  'assets',
-  'manifest.json'
-);
+// Vite's MPA build only emits HTML plus the JS/CSS it bundles, so the non-HTML
+// templates Eleventy generates (feed.xml, sitemap.xml, robots.txt) would be
+// dropped. This inline Vite plugin copies any root-level .xml/.txt files from
+// the build root into the output once the bundle is written. It runs inside
+// the Vite build (while the temp root still exists), avoiding the race that an
+// `eleventy.after` handler would have with the plugin's own build step.
+function copyEleventyExtras() {
+  let resolvedConfig;
+  return {
+    name: 'eleventy-copy-extras',
+    configResolved(config) {
+      resolvedConfig = config;
+    },
+    async closeBundle() {
+      const { root, build } = resolvedConfig;
+      const entries = await readdir(root, { withFileTypes: true });
+      await Promise.all(
+        entries
+          .filter((entry) => entry.isFile() && /\.(xml|txt)$/.test(entry.name))
+          .map((entry) =>
+            copyFile(
+              path.join(root, entry.name),
+              path.join(build.outDir, entry.name)
+            )
+          )
+      );
+    },
+  };
+}
 
-const manifest = isDev
-  ? {
-      'main.js': '/assets/main.js',
-      'main.css': '/assets/main.css',
-    }
-  : JSON.parse(fs.readFileSync(manifestPath, { encoding: 'utf8' }));
+export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyVitePlugin, {
+    viteOptions: {
+      // Static files that must keep stable, un-hashed URLs (images, the CV)
+      // live in `static/`. Vite copies its contents verbatim to the output
+      // root and leaves `/images/...`-style references untouched.
+      publicDir: 'static',
+      plugins: [copyEleventyExtras()],
+    },
+  });
 
-module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(syntaxHighlight);
@@ -44,23 +70,10 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.setDataDeepMerge(true);
-  eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
-  eleventyConfig.addPassthroughCopy({ 'src/data/cv.pdf': 'cv.pdf' });
-  // FIXME: remove this with the new GH actions
-  eleventyConfig.addPassthroughCopy({ 'CNAME': 'CNAME' });
-  eleventyConfig.setBrowserSyncConfig({ files: [manifestPath] });
-
-  eleventyConfig.addShortcode('bundledcss', function () {
-    return manifest['main.css']
-      ? `<link href="${manifest['main.css']}" rel="stylesheet" />`
-      : '';
-  });
-
-  eleventyConfig.addShortcode('bundledjs', function () {
-    return manifest['main.js']
-      ? `<script src="${manifest['main.js']}"></script>`
-      : '';
-  });
+  // main.css / main.js are bundled + content-hashed by Vite out of the build
+  // output, so the source files just need to land on disk for Vite to find.
+  eleventyConfig.addPassthroughCopy({ 'src/css': 'css' });
+  eleventyConfig.addPassthroughCopy({ 'src/js': 'js' });
 
   eleventyConfig.addFilter('excerpt', (post) => {
     const content = post.replace(/(<([^>]+)>)/gi, '');
@@ -78,7 +91,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('dateToIso', (dateString) => {
-    return new Date(dateString).toISOString()
+    return new Date(dateString).toISOString();
   });
 
   eleventyConfig.addFilter('head', (array, n) => {
@@ -127,8 +140,8 @@ module.exports = function (eleventyConfig) {
       });
   });
 
-  eleventyConfig.addTransform('htmlmin', async function(content, outputPath) {
-    if ( outputPath && outputPath.endsWith(".html") && isProd) {
+  eleventyConfig.addTransform('htmlmin', async function (content, outputPath) {
+    if (outputPath && outputPath.endsWith('.html') && isProd) {
       return await htmlmin.minify(content, {
         removeComments: true,
         collapseWhitespace: true,
@@ -152,4 +165,4 @@ module.exports = function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
   };
-};
+}
